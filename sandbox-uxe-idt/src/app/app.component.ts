@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { SafButton } from '@saffron/core-components';
+import { SafAlert, SafAnchor, SafButton } from '@saffron/core-components';
 
 
 SafButton();
+SafAlert();
+SafAnchor();
 
 @Component({
   selector: 'app-root',
