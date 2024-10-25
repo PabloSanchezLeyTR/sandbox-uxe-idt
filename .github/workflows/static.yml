@@ -46,6 +46,6 @@ jobs:
         env:
           REPO: self
           BRANCH: develop
-          FOLDER: ./sandbox-uxe-idt/docs
+          FOLDER: ./docs
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MESSAGE: "Build: ({sha}) {msg}"
