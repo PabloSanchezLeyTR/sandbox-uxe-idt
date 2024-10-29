@@ -36,7 +36,8 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://tr1.jfrog.io/artifactory/api/npm/npm/'
-      - run: npm install --registry=https://tr1.jfrog.io/artifactory/api/npm/npm/
+      - name: Install dependencies
+        run: echo "//npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN" > ~/.npmrc npm ci
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Setup Pages
