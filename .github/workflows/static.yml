@@ -31,11 +31,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - uses: actions/setup-node@v2
+      - name: Use Node.js 18.x to compile Storybook
+        uses: actions/setup-node@v4
         with:
-          node-version: 16.13.0
-          registry-url: https://registry.npmjs.org/
-      - run: npm install --registry https://registry.npmjs.org
+          node-version: '16.x'
+          registry-url: 'https://tr1.jfrog.io/artifactory/api/npm/npm/'
+      - run: npm install
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
