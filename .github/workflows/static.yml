@@ -41,6 +41,9 @@ jobs:
           echo "//tr1.jfrog.io/artifactory/api/npm/npm/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
       - name: Verify npm configuration
         run: cat ~/.npmrc
+      - name: Configure npm for Artifactory
+        run: |
+          echo "//tr1.jfrog.io/artifactory/api/npm/npm/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
       - name: Install dependencies
         run: npm install
       - name: Setup Pages
