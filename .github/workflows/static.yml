@@ -38,14 +38,6 @@ jobs:
           registry-url: 'https://tr1.jfrog.io/artifactory/api/npm/npm/'
       - name: Set npmrc
         run: echo "//npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN" > ~/.npmrc
-      - name: Debug Token
-        run: echo "Token length: $(echo -n ${{ secrets.NPM_TOKEN }} | wc -c)"
-      - name: Install dependencies
-        run: npm install
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Run builder
-        run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
