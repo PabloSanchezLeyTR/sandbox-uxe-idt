@@ -39,7 +39,7 @@ jobs:
       - name: Set npmrc
         run: echo "//npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN" > ~/.npmrc
       - name: Debug Token
-        run: "Token: ${{ secrets.NPM_TOKEN }}"
+        run: echo "Token length: $(echo -n ${{ secrets.NPM_TOKEN }} | wc -c)"
       - name: Install dependencies
         run: npm install
         env:
