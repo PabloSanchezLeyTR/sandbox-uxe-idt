@@ -36,7 +36,7 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://tr1.jfrog.io/artifactory/api/npm/npm/'
-      - run: npm install
+      - run: npm install --registry=https://tr1.jfrog.io/artifactory/api/npm/npm/
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
