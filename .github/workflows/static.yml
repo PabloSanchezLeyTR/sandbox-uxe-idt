@@ -34,11 +34,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16.x'
-      - name: Display package.json
-        run: cat package.json
-      - name: Display npm configuration
-        run: npm config ls
+          node-version: '14'
+          registry-url: 'https://tr1.jfrog.io/artifactory/api/npm/npm/'
       - name: Install dependencies
         run: npm install
       - name: Setup Pages
