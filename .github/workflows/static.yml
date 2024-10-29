@@ -31,14 +31,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: NPM login
-        uses: actions/setup-node@v4
-        with:
-          registry-url: 'https://tr1.jfrog.io/artifactory/api/npm/npm/'
-      - name: Install dependencies
         run: npm ci
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
